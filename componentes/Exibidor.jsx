@@ -25,30 +25,28 @@ const ModeloDados = styled.div`
 `
 
 
-export default function Exibidor(props){
-    return(
-        <Modelo>
-            <ModeloImagens>
-            <img
-            src={props.produto.imagens[0]}
-            alt="Foto do Produto"
-            height={ 450 }/>
-            <img
-            src={props.produto.imagens[1]}
-            alt="Foto do Produto"
-            height={ 450 }/>
-            <img
-            src={props.produto.imagens[2]}
-            alt="Foto do Produto"
-            height={ 450 }/>
-            </ModeloImagens>
-            <ModeloDados>
-                <div>{props.produto.marca}</div>
-                <div>{props.produto.modelo}</div>
-                <div>{props.produto.preco}</div>
-                <div>{props.produto.descricao}</div>
-                <button> Adicionar ao Carrinho </button>
-            </ModeloDados>
-        </Modelo>
-    );
+export default function Exibidor(props) {
+  return props.produto && Object.keys(props.produto).length > 0 
+
+    // Produto encontrado — mostra as imagens e dados
+    ? <Modelo>
+        <ModeloImagens>
+          <img src={ props.produto.imagens[0] } alt="Foto do Produto" height={ 450 }/>
+          <img src={ props.produto.imagens[1] } alt="Foto do Produto" height={ 450 }/>
+          <img src={ props.produto.imagens[2] } alt="Foto do Produto" height={ 450 }/>
+        </ModeloImagens>
+        <ModeloDados>
+          <div> { props.produto.marca } </div>
+          <div> { props.produto.modelo } </div>
+          <div> R$ { props.produto.preco },00 </div>
+          <div> { props.produto.descricao } </div>
+          <button> Adicionar ao Carrinho </button>
+        </ModeloDados>
+      </Modelo>
+
+    // Produto não encontrado — mostra mensagem de aviso
+    : <Modelo>
+        <ModeloDados> Produto não encontrado! </ModeloDados>
+      </Modelo>
 }
+

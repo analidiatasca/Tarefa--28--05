@@ -17,7 +17,7 @@ const ProdutosExemplo = [
     codigo: "002",
     marca: "Marca",
     modelo: "Calça Feminina",
-    preco: 200,
+    preco: 300,
     descricao: "Uma calça confortável e estilosa...",
     imagens: [      
       "https://i.ibb.co/zhJfL80d/cal-a1.webp",
@@ -28,10 +28,10 @@ const ProdutosExemplo = [
   },
 
     {
-    codigo: "002",
+    codigo: "003",
     marca: "Marca",
     modelo: "Moletom Feminino",
-    preco: 200,
+    preco: 250,
     descricao: "Um moletom confortável. Perfeito para o inverno",
     imagens: [      
       "https://i.ibb.co/SXCsyFjg/Captura-de-tela-2026-05-31-142821.png",
@@ -42,7 +42,7 @@ const ProdutosExemplo = [
   },
 
     {
-    codigo: "002",
+    codigo: "004",
     marca: "Marca",
     modelo: "Moletom Masculino",
     preco: 200,
@@ -56,10 +56,10 @@ const ProdutosExemplo = [
   },
 
     {
-    codigo: "002",
+    codigo: "0069",
     marca: "Marca",
     modelo: "Blusa Masculina",
-    preco: 200,
+    preco: 140,
     descricao: "Uma blusa simples, confortável e estilosa...",
     imagens: [      
       "https://i.ibb.co/4nYHZPJQ/Captura-de-tela-2026-05-31-143109.png",
@@ -70,7 +70,7 @@ const ProdutosExemplo = [
   },
 
     {
-    codigo: "002",
+    codigo: "0067",
     marca: "Marca",
     modelo: "Camisa do Brasil Feminina",
     preco: 199.99,
@@ -84,7 +84,7 @@ const ProdutosExemplo = [
   },
 
     {
-    codigo: "002",
+    codigo: "005",
     marca: "Cotton-on",
     modelo: "Regata rosa bebê",
     preco: 99.99,

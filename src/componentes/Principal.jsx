@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 // Grid responsivo de produtos
 const Modelo = styled.div`
@@ -34,22 +35,25 @@ const ProdutoDados = styled.div`
   text-align: center;
 `
 
-export default function Principal({ produtos }) {
+export default function Principal(props) {
   return (
-    <Modelo>
-        {produtos.map((produto) => (
-        <Produto key={produto.codigo}>
-          <ProdutoImagem
-            src={produto.imagens[0]}
-            alt="Foto do Produto"
-          />
-          <ProdutoDados>
-            <div>{produto.modelo}</div>
-            <div>R$ {produto.preco}</div>
-          </ProdutoDados>
-        </Produto>
-      ))}
+	    <Modelo>
+      {
+        props.produtos.map(function(produto) {
+          return (
+            <Produto key={ produto.codigo }>
+              <Link to={ "/produto/" + produto.codigo }>
+                <ProdutoImagem
+                  src={ produto.imagens[0] }
+                  alt="Foto do Produto"
+                />
+                <ProdutoDados>
+                  <div>{ produto.modelo }</div>
+                  <div>R$ { produto.preco }</div>
+                </ProdutoDados>
+              </Link>
+            </Produto>
+          )})}
     </Modelo>
-  )
-}
+  )}
 

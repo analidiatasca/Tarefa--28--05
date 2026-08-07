@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import Navegacao from "../components/Navegacao"
 import Exibidor from "../components/Exibidor"
-import ProdutosExemplo from "../data/ProdutosExemplo"
+import ProdutosExemplo from "../datas/ProdutosExemplo"
 
 
 

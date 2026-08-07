@@ -1,24 +1,26 @@
-import React, {useState, useEffect} from "react"
+import {useState, useEffect} from "react"
 import Navegacao from "../componentes/Navegacao"
 import Janela from "../componentes/Janela"
-import ProdutosExemplo from "../data/ProdutosExemplo"
+import ProdutosExemplo from "../datas/ProdutosExemplo"
 import ObterCarrinho from "../../functions/ObterCarrinho"
 import Pagamento from "../../functions/Pagamento"
-
 
 
 export default function Carrinho() {
   const [carrinho, setCarrinho] = useState([])
   const [preco, setPreco] = useState(0)
 
+
   useEffect(function() {
     const carrinho = ObterCarrinho() // lê o carrinho do localStorage
     setCarrinho(carrinho)     //preenche o carrinho com os dados do localStorage
   }, [])
 
+
   const produtosMap = Object.fromEntries(
   ProdutosExemplo.map(p => [p.codigo, p])
 )
+
 
 // Calcular o preço total do carrinho
 useEffect(function() {
@@ -34,6 +36,8 @@ useEffect(function() {
 }, [carrinho])   // recalcula sempre que carrinho mudar
 
 
+
+
   return (
     <>
       <Navegacao titulo="VITRINE">
@@ -41,6 +45,7 @@ useEffect(function() {
         <a href="/promocao"> Promocao </a>
         <a href="/carrinho"> Carrinho </a>
       </Navegacao>
+
 
       <Janela>
         <table width="100%">
@@ -60,19 +65,26 @@ useEffect(function() {
             </tbody>
             </table>
 
-        <h1> 
+
+        <h1>
           {preco.toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL'
             })}
         </h1>
 
-        <button onClick={ Pagamento }>
+
+        {/* Botão de pagamento por Pix */}
+        <button onClick={Pagamento}>
           Pagamento por Pix
         </button>
+
+
 
 
       </Janela>
     </>
   )
 }
+
+

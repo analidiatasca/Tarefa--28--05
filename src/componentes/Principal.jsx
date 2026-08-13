@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 // Grid responsivo de produtos
 const Modelo = styled.div`
@@ -19,8 +19,7 @@ const Produto = styled.div`
   &:hover {
     transform: rotateZ(2deg) scale(1.1);
     transition: 0.2s;
-    }
-  
+  }
 `
 
 // Imagem quadrada com recorte inteligente
@@ -37,7 +36,7 @@ const ProdutoDados = styled.div`
 
 export default function Principal(props) {
   return (
-	    <Modelo>
+    <Modelo>
       {
         props.produtos.map(function(produto) {
           return (
@@ -56,4 +55,3 @@ export default function Principal(props) {
           )})}
     </Modelo>
   )}
-

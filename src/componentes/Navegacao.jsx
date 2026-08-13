@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 // Container principal — esconde overflow
 const Modelo = styled.div`
-  overflow: hidden;
+  overflow: hidden;    /* Esconde scrollbars e conteúdo extra */
 `
 
 // Título grande centralizado

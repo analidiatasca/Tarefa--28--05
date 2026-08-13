@@ -3,6 +3,7 @@ import Vitrine from "./pages/Vitrine"
 import Produto from "./pages/Produto"
 import Promocao from "./pages/Promocao"
 import Carrinho from "./pages/Carrinho"
+import Catalogar from "./pages/Catalogar"
 
 export default function Rotas() {
   return (
@@ -12,6 +13,7 @@ export default function Rotas() {
         <Route path="/promocao" element={ <Promocao/> } />
         <Route path="/carrinho" element={ <Carrinho/> } />
         <Route path="/produto/:codigo" element={<Produto />} />
+        <Route path="/catalogar" element={<Catalogar />} />
 
       </Routes>
     </BrowserRouter>

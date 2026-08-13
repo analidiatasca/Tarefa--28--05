@@ -9,7 +9,6 @@ import { ObterProdutoCodigo } from "../../functions/RequisicaoServidor"
 
 export default function Produto() {
     const { codigo } = useParams();
-    
     const [produto, definirProduto] = useState({});
 
     useEffect(function () {

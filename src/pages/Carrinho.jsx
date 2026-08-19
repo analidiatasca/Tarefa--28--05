@@ -5,12 +5,13 @@ import Janela from "../componentes/Janela";
 import ObterCarrinho from "../../functions/ObterCarrinho";
 import Pagamento from "../../functions/Pagamento";
 import { ObterProdutos } from "../../functions/RequisicaoServidor";
+import RemoverCarrinho from "../../functions/RemoverCarrinho";
 
 export default function Carrinho() {
   const [produtos, definirProdutos] = useState([]);
 
   // 1. Carrega o carrinho diretamente na inicialização do estado
-  const [carrinho] = useState(() => ObterCarrinho());
+  const [carrinho, definirCarrinho] = useState(() => ObterCarrinho());
 
   // 2. Busca os produtos do servidor (requisição assíncrona)
   useEffect(function () {
@@ -25,6 +26,10 @@ export default function Carrinho() {
       });
   }, []);
 
+  function removerProduto(codigo) {
+    RemoverCarrinho(codigo);
+    definirCarrinho(ObterCarrinho());
+  }
   // 3. Cálculo derivado do preço (executa automaticamente a cada render)
   var preco = 0;
   for (const codigo of carrinho) {
@@ -59,6 +64,9 @@ export default function Carrinho() {
                       style: "currency",
                       currency: "BRL",
                     })}
+                  </td>
+                  <td>
+                    <button onClick={function() { Remover(codigo) }}> X </button>
                   </td>
                 </tr>
               );
